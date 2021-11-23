@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="sass/style.css">
+    <script src="js/main.js" type="module"></script>
+    <title>Search Me!</title>
+</head>
+
+<body>
+    <main>
+        <!--accessibility for screenreaders-->
+        <h1 class="offscreen">Search me a Wikipedia powered Search</h1>
+        <section class="searchEntry">
+            <h2 class="offscreen">Search Entry</h2>
+
+            <!--The logo can be skipped-->
+            <div class="logo" aria-hidden="true">
+                <span class="blue">S</span>
+                <span class="red">e</span>
+                <span class="yellow">a</span>
+                <span class="blue">r</span>
+                <span class="green">c</span>
+                <span class="red">h</span>
+                <span class="blue">M</span>
+                <span class="yellow">e</span>
+                <span class="red exclaim">!</span>
+            </div>
+
+            <form id="searchBar" class="searchBar" role="search"> 
+                <label class="offscreen" for="search">Enter a search term or phrase</label>
+                <input id="search" type="text" autocomplete="off" role="searchbox" />
+                <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
+                    <i class="fas fa-times"></i>
+                </div>
+                <button id="searchButton" class="button searchButton" type="submit" aria-label="Submit button">
+                    <i class="fas fa-search blue"></i>
+                </button>
+                
+            </form>
+        </section>
+
+        <section class="results">
+            <h2 class="offscreen">Search Result</h2>
+
+            <!--aria -live set to assertive due to changes in the result-summary -->
+            <div class="statsBar">
+                <div id="stats" class="stats" aria-live="assertive"></div>
+            </div>
+
+            <div class="searchResults" id="searchResults">
+                <!--div class="resultItem">
+                    <div class="resultTitle">
+                        <a href="http://">Player</a>
+                    </div>
+                    <div class="resultContents">
+                        <div class="resultthumb">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Serena_Williams_at_2013_US_Open.jpg/330px-Serena_Williams_at_2013_US_Open.jpg"
+                                width="50" alt="player">
+                        </div>
+                        <div class="resultText">
+                            <p class="resultDescription"></p>
+                        </div>
+                    </div>
+                </div-->
+            </div>
+
+        </section>
+    </main>
+
+    <!-- << >> will not read by the helper devices -->
+    <footer>
+        <p><span aria-hidden="true">&lt;&lt;</span>Powered by <a href="https://www.Wikipedia.org"
+                target="_blank">Wikipedia</a>
+            <span aria-hidden="true">&gt;&gt;</span>
+        </p>
+    </footer>
+</body>
+
+</html>
